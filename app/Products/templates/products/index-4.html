@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>EnchantedRentals</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Custom font-->
+    <!-- Swiper-->
+    <link rel="stylesheet" href="{% static 'vendor/swiper/swiper-bundle.min.css' %}">
+    <!-- AOS - AnimationOnScroll-->
+    <link rel="stylesheet" href="{% static 'vendor/aos/aos.css' %}">
+    <!-- Custom Scrollbar-->
+    <link rel="stylesheet" href="{% static 'vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css' %}">
+    <!-- Theme stylesheet-->
+    <link rel="stylesheet" href="{% static 'css/style.default.css' %}" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="{% static 'img/ER_logo.png' %}">
+    <!-- FontAwesome-->
+  </head>
+  <body>
+    <!-- navbar-->
+    <header class="header"> 
+      <!-- Top Bar-->
+      <div class="top-bar text-sm">
+        <div class="container-fluid px-lg-5 py-3">
+          <div class="row align-items-center">
+            <div class="col-md-4 d-none d-md-block">
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item me-2"><a class="text-reset text-primary-hover" href="#"><i class="fab fa-facebook-f"> </i></a></li>
+                <li class="list-inline-item me-4"><a class="text-reset text-primary-hover" href="#"><i class="fab fa-twitter"> </i></a></li>
+                <li class="list-inline-item me-2">
+                  <img  src="{% static 'img/ER_logo.png' %}"  alt="" style="height:150px;width:150"/>
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-md-4 text-start text-md-center">
+              <p class="mb-0"> In light of recent events,  We have amended our hours of operation.
+
+                Our showroom will be open by appointment only.
+
+                The minimum order required for self pick up or delivery is $100.00 plus delivery
+              </p>
+            </div>
+            <div class="col-sm-6 col-md-4 d-none d-sm-flex justify-content-end">
+              <!-- Language Dropdown-->
+              <div class="dropdown border-right px-3"><a class="topbar-link" id="langsDropdown" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-haspopup="true" aria-expanded="false"><svg class="svg-icon me-2">
+                <use xlink:href="#calls-1"> </use>
+              </svg>310-444-9618</a>
+              </div>
+              <!-- Currency Dropdown-->
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Top Bar End-->
+      <nav class="navbar navbar-expand-lg bg-transparent border-0 shadow-0 navbar-light px-lg-5 z-index-20 "><a class="navbar-brand" href="{% url 'index' %}">Enchanted Rentals</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <svg class="svg-icon navbar-icon">
+            <use xlink:href="#menu-hamburger-1"> </use>
+          </svg>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav mt-3 mt-lg-0">
+            
+            <!-- Megamenu-->
+            <li class="nav-item dropdown position-static"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Inventory</a>
+              <div class="dropdown-menu dropdown-menu-animated megamenu px-4 px-lg-5 py-lg-5">
+                <div class="row">
+                  <div class="col-lg-3 col-sm-6"><img class="img-fluid mb-3 d-none d-lg-block" src="{% static 'img/product/event-pic-2.jpg' %}"  alt=""/>
+                    <!-- Megamenu list-->
+                    <ul class="megamenu-list list-unstyled">
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Chairs' %}">Chairs   </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Tables' %}">Tables   </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Linen' %}">Linen</a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Lounge Furniture' %}">Lounge furniture   </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Bars' %}">Bars </a></li>
+                    </ul>
+            
+                  </div>
+                  <div class="col-lg-3 col-sm-6"><img class="img-fluid mb-3 d-none d-lg-block" src="{% static 'img/product/event-utensils.jpg' %}" alt=""  style="height:210px;"/>
+                    <!-- Megamenu list-->
+                    <ul class="megamenu-list list-unstyled">
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='China' %}">China   </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Silverware' %}">Silverware  </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Glassware' %}">Glassware   </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Catering' %}">Catering   </a></li>
+                    </ul>
+                    <!-- Megamenu list-->
+                  
+                  </div>
+                  <div class="col-lg-3 col-sm-6"><img class="img-fluid mb-3 d-none d-lg-block" src="{% static 'img/product/tents.jpg' %}" alt="" style="height:210px;"/>
+                    <!-- Megamenu list-->
+                    <ul class="megamenu-list list-unstyled">
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Tents' %}">Tents   </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Lighting and Music' %}">Lighting/music   </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Heatlamps and Umbrellas' %}">Heatlamps/Umbrellas   </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Flooring' %}">Flooring   </a></li>
+                    </ul>
+                    
+                  </div>
+                  <div class="col-lg-3 col-sm-6"><img class="img-fluid mb-3 d-none d-lg-block" src="{% static 'img/product/arches.jpg' %}" alt="" style="height:210px;"/>
+                    <!-- Megamenu list-->
+                    <ul class="megamenu-list list-unstyled mb-lg-0">
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Wedding Arches and Chuppahs' %}">Wedding Arches/ Chuppahs </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Pipe and Drape' %}">Pipe and Drape    </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Crowd Control' %}">Crowd control</a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Miscellaneous' %}">Miscellaneous</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- /Megamenu end-->
+            <li class="nav-item dropdown" ><a class="nav-link" id="docsDropdown" href="{% url 'policy' %}" aria-haspopup="true" aria-expanded="false">Rental Policy</a>
+              
+            </li>
+            <li class="nav-item dropdown"><a class="nav-link" id="docsDropdown" href="{% url 'contact' %}"  aria-haspopup="true" aria-expanded="false">Contact Us</a>
+              
+            </li>
+          
+        </div>
+      </nav>
+    </header>
+    <svg class="svg-blob svg-blob-fill-current" style=" width: 800px; height: 800px; max-width: 100%; left: -200px; top: -200px; color: #e0d4ab;">
+      <use xlink:href="#blob-shape"> </use>
+    </svg>
+    <!-- Slider main container-->
+    <div class="swiper swiper-container home-slider-design" style="height: 50vh; min-height: 500px;">
+      <!-- Additional required wrapper-->
+      <div class="swiper-wrapper">
+        <!-- Slides-->
+        <div class="swiper-slide bg-cover-right">
+          <div class="container h-100">
+            <div class="row h-100 align-items-center">
+              <div class="col-sm-6 pt-5 pt-md-0" data-swiper-parallax="-500">
+                <p class="subtitle letter-spacing-3 mb-3 text-dark font-weight-light"></p>
+                <h3 class="display-3" style="line-height: 1">Updated Store Hours</h3>
+                <p class="text-muted mb-5"> </p><a class="btn btn-outline-primary" href="{% url 'contact' %}">Reserve now</a>
+              </div>
+              <div class="col-sm-6 text-start text-sm-center"><img class="img-fluid home-slider-image" src="{% static 'img/product/Brandnewlogo.jpg' %}"  alt="savingPNG.png" data-swiper-parallax="-200">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide bg-cover-left">
+          <div class="container h-100">
+            <div class="row h-100 align-items-center">
+              <div class="col-sm-6 pt-5 pt-md-0" data-swiper-parallax="-500">
+                <p class="subtitle letter-spacing-3 mb-3 text-dark font-weight-light">Our Lounge collection is here</p>
+                <h2 class="display-3" style="line-height: 1">White</h2>
+                <p class="text-muted mb-5">Take your event to another level, with our Lounge collection</p><a class="btn btn-outline-primary" href="{% url 'products' category='Lounge Furniture'%}">Discover more</a>
+              </div>
+              <div class="col-sm-6 text-start text-sm-center"><img class="img-fluid home-slider-image" src={% static 'img/product/Lounge-tranparent.png' %} alt="" data-swiper-parallax="-200">
+                <svg class="svg-blob d-none d-md-inline-block svg-blob-fill-current svg-blob-swiper" style="color: #ffdddd">
+                  <use xlink:href="#blob-shape-3"> </use>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="container h-100">
+            <div class="row h-100 align-items-center">
+              <div class="col-sm-6 pt-5 pt-md-0" data-swiper-parallax="-500">
+                <p class="subtitle letter-spacing-3 mb-3 text-dark font-weight-light"> </p>
+                <h2 class="display-3 mb-5" style="line-height: 1">Heaters</h2>
+                <p class="text-muted mb-5">Keep warm this winter season</p>
+                <a class="btn btn-outline-primary" href={% url 'products' category='Heatlamps and Umbrellas' %}>Discover more</a>
+
+              </div>
+              <div class="col-sm-6 text-start text-sm-center"><img class="img-fluid home-slider-image" src="{% static 'img/product/heater.png' %}"  style="height: 650px" alt="" data-swiper-parallax="-200">
+                <svg class="svg-blob d-none d-md-inline-block svg-blob-fill-current svg-blob-swiper" style="color: #e7eaf9">
+                  <use xlink:href="#blob-shape-3"> </use>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide bg-cover-right">
+          <div class="container h-100">
+            <div class="row h-100 align-items-center">
+              <div class="col-sm-6 pt-5 pt-md-0" data-swiper-parallax="-500">
+                <p class="subtitle letter-spacing-3 mb-3 text-dark font-weight-light"></p>
+                <h2 class="display-3" style="line-height: 1">Tents</h2>
+                <p class="text-muted mb-5">Keep your guests safe from the weather by renting our tents</p><a class="btn btn-outline-primary" href="{% url 'products' category='Tents' %}">Discover more</a>
+              </div>
+              <div class="col-sm-6 text-start text-sm-center"><img class="img-fluid home-slider-image" src="{% static 'img/product/tents-crop.png' %}" style="width:1200px" alt="" data-swiper-parallax="-200">
+                  <use xlink:href="#blob-shape-3"> </use>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-nav d-none d-lg-block">
+        <div class="swiper-button-prev" id="homePrev"></div>
+        <div class="swiper-button-next" id="homeNext">   </div>
+      </div>
+    </div>
+    <div class="container py-6">
+      <div class="row">
+        <div class="mb-2 col-6 col-lg-7 pe-1">
+          <div class="banner" style="background-color:#c3e3e0" data-aos="zoom-in">
+            <div class="banner-text p-3 p-lg-5">
+              <p class="subtitle text-sm" style="color: #3b5d59">Wood &amp; Metal</p>
+              <h2 class="mb-0">Tables      </h2>
+            </div>
+            <div class="banner-bg"><img class="img-fluid" src="{% static 'img/product/60-round.png' %}" alt=""></div><a class="stretched-link banner-link" href="{% url 'products' category="Tables" %}"><span class="sr-only"></span></a>
+          </div>
+        </div>
+        <div class="mb-2 col-6 col-lg-5 ps-1">
+          <div class="banner" style="background-color:#f8f0cc" data-aos="zoom-in">
+            <div class="banner-text p-3 p-lg-5">
+              <p class="subtitle text-sm" style="color: #6d5900">Tables cloths</p>
+              <h2 class="mb-0">Linen      </h2>
+            </div>
+            <div class="banner-bg"><img class="img-fluid" src="{% static 'img/product/linen.png' %}" style="height:340px;" alt=""></div><a class="stretched-link banner-link" href="{% url 'products' category="Linen" %}"><span class="sr-only"</span></a>
+          </div>
+        </div>
+        <div class="mb-2 col-6 col-lg-5 pe-1">
+          <div class="banner" style="background-color:#ffd4d2" data-aos="zoom-in">
+            <div class="banner-text p-3 p-lg-5">
+              <p class="subtitle text-sm" style="color: #7d514f"></p>
+              <h2 class="mb-0">Glassware      </h2>
+            </div>
+            <div class="banner-bg"><img class="img-fluid" src="{% static 'img/product/glass-ware.png' %}" style="height:300px;" alt=""></div><a class="stretched-link banner-link" href="{% url 'products' category="Glassware" %}"><span class="sr-only"></span></a>
+          </div>
+        </div>
+        <div class="mb-2 col-6  col-lg-7 ps-1">
+          <div class="banner" style="background-color:#cddeff" data-aos="zoom-in">
+            <div class="banner-text p-3 p-lg-5">
+              <p class="subtitle text-sm" style="color: #46619a"></p>
+              <h2 class="mb-0">China      </h2>
+            </div>
+            <div class="banner-bg"><img class="img-fluid"  src="{% static 'img/product/plates.png' %}" alt=""></div><a class="stretched-link banner-link" href="{% url 'products' category="China" %}"><span class="sr-only"></span></a>
+          </div>
+        </div>
+        <div class="mb-2 col-6 col-lg-7 pe-1">
+          <div class="banner" style="background-color:#c3e3e0" data-aos="zoom-in">
+            <div class="banner-text p-3 p-lg-5">
+              <p class="subtitle text-sm" style="color: #3b5d59"></p>
+              <h2 class="mb-0">Bars     </h2>
+            </div>
+            <div class="banner-bg"><img class="img-fluid" style="width:500px;margin-top:-50px" src="{% static 'img/product/tufted-bar.png' %}" alt=""></div><a class="stretched-link banner-link" href="{% url 'products' category="Bars" %}"><span class="sr-only"></span></a>
+          </div>
+        </div>
+        <div class="mb-2 col-6 col-lg-5 ps-1">
+          <div class="banner" style="background-color:#f8f0cc" data-aos="zoom-in">
+            <div class="banner-text p-3 p-lg-5">
+              <p class="subtitle text-sm" style="color: #6d5900">Elegant</p>
+              <h2 class="mb-0">Chairs     </h2>
+            </div>
+            <div class="banner-bg"><img class="img-fluid" src="{% static 'img/product/wht-padded.png' %}" style="height:400px;" alt=""></div><a class="stretched-link banner-link" href="{% url 'products' category="Chairs" %}"><span class="sr-only"</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="position-relative py-6 overflow-hidden" style="background-color: #fdf7e5;" data-aos="flip-up">
+      <svg class="svg-blob svg-blob-fill-current" style="right: 0; top: 0; color: #ded3ae;">
+        <use xlink:href="#blob-shape-4"> </use>
+      </svg>
+      <div class="container"><a href=""><img class="position-absolute d-none d-sm-block" style="right: 5%;padding-top:-10px;" src="{% static 'img/product/yelp.png' %}"  alt=""></a>
+        <div class="position-relative z-index-10">
+          <p class="subtitle mb-3" style="color: #846707;">Check out our Reviews </p>
+          <h4 class="h1 mb-3">See why people choose us</h4>
+
+           <a class="btn btn-outline-dark" href="https://www.yelp.com/biz/enchanted-rentals-los-angeles-2">Yelp page </a>
+        </div>
+      </div>
+    </div>
+    
+        
+    
+    
+    <!-- Sidebar Modal Right-->
+    
+    <!-- Footer-->
+    <footer>
+    
+      <!-- Main block - menus, subscribe form-->
+      <div class="py-6 text-muted"> 
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5 pe-lg-5 pe-xl-6 mb-5 mb-lg-0">
+              <h6 class="text-dark letter-spacing-1 mb-4">Contact us</h6>
+              <p class="text-sm mb-3">Send us and email or call us to make a Reservation</p>
+                <div class="input-group input-group-underlined mb-3">
+                  <a href="{% url 'contact' %}">
+                    <button class="btn btn-secondary" type="button"> 
+                      Reserve now
+                    </button>
+                  </a>
+                  
+                </div>
+            </div>
+            <div class="col-lg-7">      
+              <div class="row">                
+                <div class="col-lg-4"><a class="d-lg-none block-toggler my-3" data-bs-toggle="collapse" href="#footerMenu0" aria-expanded="false" aria-controls="footerMenu0">Products<span class="block-toggler-icon"></span></a>
+                  <!-- Footer collapsible menu-->
+                  <div class="expand-lg collapse" id="footerMenu0">
+                    <ul class="list-unstyled text-sm pt-2 pt-lg-0">
+                      <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Chairs' %}">Chairs</a></li>
+                      <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Tables' %}">Tables</a></li>
+                      <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Linen' %}">linen</a></li>
+                      <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Bars' %}">Bars</a></li
+                        <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Lounge Furniture' %}">Lounge furniture</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-4"><a class="d-lg-none block-toggler my-3" data-bs-toggle="collapse" href="#footerMenu1" aria-expanded="false" aria-controls="footerMenu1">Products<span class="block-toggler-icon"></span></a>
+                    <!-- Footer collapsible menu-->
+                    <div class="expand-lg collapse" id="footerMenu1">
+                      <ul class="list-unstyled text-sm pt-2 pt-lg-0">
+                        <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='China' %}">China</a></li>
+                        <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Silverware' %}">Silverware</a></li>
+                        <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Glassware' %}">Glassware</a></li>
+                        <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Catering' %}">Catering</a></li>
+                        <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Crowd Control' %}">Crowd control</a></li>
+                        <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Pipe and Drape' %}">Pipe and Drape</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-lg-4"><a class="d-lg-none block-toggler my-3" data-bs-toggle="collapse" href="#footerMenu2" aria-expanded="false" aria-controls="footerMenu2">Products<span class="block-toggler-icon"></span></a>
+                  <!-- Footer collapsible menu-->
+                  <div class="expand-lg collapse" id="footerMenu2">
+                    <ul class="list-unstyled text-sm pt-2 pt-lg-0">
+                      <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Tents' %}">Tents</a></li>
+                      <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Lighting and Music' %}">lighting/Music</a></li>
+                      <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Heatlamps and Umbrellas' %}">Heatlamps/Umbrellas</a></li>
+                      <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Flooring' %}">Flooring</a></li>
+                      <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Wedding Arches and Chuppahs' %}">Wedding Arches/Chuppahs</a></li>
+
+                    </ul>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Copyright section of the footer-->
+      <div class="py-4 fw-light text-muted">
+        <div class="container">
+          <div class="row align-items-center text-sm text-gray-500">
+            <div class="col-lg-4 text-center text-lg-start">
+              <p class="mb-lg-0">&copy; 2021, Enchanted Rentals.  All rights reserved.</p>
+              <p class="mb-lg-0">All prices subject to change without notice.</p>
+            </div>
+            <div class="col-lg-8">
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- /Footer end-->
+    <!-- JavaScript files-->
+    <script>
+      // ------------------------------------------------------- //
+      //   Inject SVG Sprite - 
+      //   see more here 
+      //   https://css-tricks.com/ajaxing-svg-sprite/
+      // ------------------------------------------------------ //
+      function injectSvgSprite(path) {
+      
+          var ajax = new XMLHttpRequest();
+          ajax.open("GET", path, true);
+          ajax.send();
+          ajax.onload = function(e) {
+          var div = document.createElement("div");
+          div.className = 'd-none';
+          div.innerHTML = ajax.responseText;
+          document.body.insertBefore(div, document.body.childNodes[0]);
+          }
+      }
+      // this is set to Bootstrapious website as you cannot 
+      // inject local SVG sprite (using only 'icons/orion-svg-sprite.svg' path)
+      // while using file:// protocol
+      // pls don't forget to change to your domain :)
+      injectSvgSprite('https://demo.bootstrapious.com/varkala/1-1/icons/orion-svg-sprite.svg'); 
+      injectSvgSprite('https://demo.bootstrapious.com/varkala/1-1/icons/varkala-clothes.svg'); 
+      injectSvgSprite('https://demo.bootstrapious.com/varkala/1-1/img/shape/blob-sprite.svg'); 
+      
+    </script>
+    <!-- jQuery-->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <!-- Bootstrap Bundle -->
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <!-- Swiper Carousel                       -->
+    <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <!-- Bootstrap Select-->
+    <script src="{% static 'vendor/bootstrap-select/js/bootstrap-select.min.js' %}"></script>
+    <!-- AOS - AnimationOnScroll-->
+    <script src="{% static 'vendor/aos/aos.js' %}"></script>
+    <!-- Custom Scrollbar-->
+    <script src="{% static 'vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+    <script src="{% static 'js/custom-scrollbar-init.js' %}"></script>
+    <!-- Smooth scroll-->
+    <script src="{% static 'vendor/smooth-scroll/smooth-scroll.polyfills.min.js' %}"></script>
+    <!-- Object Fit Images - Fallback for browsers that don't support object-fit-->
+    <script src="{% static 'vendor/object-fit-images/ofi.min.js' %}"></script>
+    <!-- Masonry layout scripts-->
+    <script src="{% static 'vendor/masonry-layout/masonry.pkgd.min.js' %}"></script>
+    <script src="{% static 'vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/masonry-init.js' %}"></script>
+    <!-- JavaScript Countdown-->
+    <script src="{% static 'js/countdown.js' %}"></script>
+    <script>
+      var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
+      var countdown = new Countdown('countdown', deadline);
+      
+    </script>
+    <!-- Some theme config-->
+    <script>
+      var options = {
+          navbarExpandPx: 992
+      }
+      
+    </script>
+    <!-- Main Theme files-->
+    <script src="{% static 'js/sliders-init.js' %}"></script>
+    <script src="{% static 'js/theme.js' %}"></script>
+  </body>
+</html>

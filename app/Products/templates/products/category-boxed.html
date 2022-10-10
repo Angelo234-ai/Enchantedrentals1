@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>EnchantedRentals</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Custom font-->
+    <!-- Swiper-->
+    <link rel="stylesheet" href="{% static 'vendor/swiper/swiper-bundle.min.css' %}">
+    <!-- AOS - AnimationOnScroll-->
+    <link rel="stylesheet" href="{% static 'vendor/aos/aos.css' %}">
+    <!-- Custom Scrollbar-->
+    <link rel="stylesheet" href="{% static 'vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css' %}">
+    <!-- Price Slider Stylesheets -->
+    <!-- Theme stylesheet-->
+    <link rel="stylesheet" href="{% static 'css/style.default.css' %}" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="{% static 'img/ER_logo.png' %}">
+    <!-- FontAwesome-->
+  </head>
+  <body>
+    <!-- navbar-->
+    <header class="header"> 
+      <!-- Top Bar-->
+      <div class="top-bar text-sm">
+        <div class="container-fluid px-lg-5 py-3">
+          <div class="row align-items-center">
+            <div class="col-md-4 d-none d-md-block">
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item me-2"><a class="text-reset text-primary-hover" href="#"><i class="fab fa-facebook-f"> </i></a></li>
+                <li class="list-inline-item me-4"><a class="text-reset text-primary-hover" href="#"><i class="fab fa-twitter"> </i></a></li>
+                <li class="list-inline-item me-2">
+                  <svg class="svg-icon me-2">
+                    <use xlink:href="#calls-1"> </use>
+                  </svg>310-444-9618
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-md-4 text-start text-md-center">
+              <p class="mb-0"> In light of recent events,  We have amended our hours of operation.
+
+                Our showroom will be open by appointment only.
+
+                The minimum order required for self pick up or delivery is $100.00 plus delivery
+              </p>
+            </div>
+            <div class="col-sm-6 col-md-4 d-none d-sm-flex justify-content-end">
+              <!-- Language Dropdown-->
+              <div class="dropdown border-right px-3"><a class="topbar-link" id="langsDropdown" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-haspopup="true" aria-expanded="false">English</a>
+              </div>
+              <!-- Currency Dropdown-->
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Top Bar End-->
+      <nav class="navbar navbar-expand-lg bg-transparent border-0 shadow-0 navbar-light px-lg-5 z-index-20 "><a class="navbar-brand" href="{% url 'index' %}">Enchanted Rentals</a>
+        
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <svg class="svg-icon navbar-icon">
+            <use xlink:href="#menu-hamburger-1"> </use>
+          </svg>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav mt-3 mt-lg-0">
+            
+            <!-- Megamenu-->
+            <li class="nav-item dropdown position-static"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Inventory</a>
+              <div class="dropdown-menu dropdown-menu-animated megamenu px-4 px-lg-5 py-lg-5">
+                <div class="row">
+                  <div class="col-lg-3 col-sm-6"><img class="img-fluid mb-3 d-none d-lg-block" src="{% static 'img/product/event-pic-2.jpg' %}"  alt=""/>
+                    <!-- Megamenu list-->
+                    <ul class="megamenu-list list-unstyled">
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Chairs' %}">Chairs   </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Tables' %}">Tables   </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Linen' %}">Linen</a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Lounge Furniture' %}">Lounge furniture   </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Bars' %}">Bars </a></li>
+                    </ul>
+            
+                  </div>
+                  <div class="col-lg-3 col-sm-6"><img class="img-fluid mb-3 d-none d-lg-block" src="{% static 'img/product/event-utensils.jpg' %}" alt=""  style="height:210px;"/>
+                    <!-- Megamenu list-->
+                    <ul class="megamenu-list list-unstyled">
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='China' %}">China   </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Silverware' %}">Silverware  </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Glassware' %}">Glassware   </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Catering' %}">Catering   </a></li>
+                    </ul>
+                    <!-- Megamenu list-->
+                  
+                  </div>
+                  <div class="col-lg-3 col-sm-6"><img class="img-fluid mb-3 d-none d-lg-block" src="{% static 'img/product/tents.jpg' %}" alt="" style="height:210px;"/>
+                    <!-- Megamenu list-->
+                    <ul class="megamenu-list list-unstyled">
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Tents' %}">Tents   </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Lighting and Music' %}">Lighting/music   </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Heatlamps and Umbrellas' %}">Heatlamps/Umbrellas   </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Flooring' %}">Flooring   </a></li>
+                    </ul>
+                    
+                  </div>
+                  <div class="col-lg-3 col-sm-6"><img class="img-fluid mb-3 d-none d-lg-block" src="{% static 'img/product/arches.jpg' %}" alt="" style="height:210px;"/>
+                    <!-- Megamenu list-->
+                    <ul class="megamenu-list list-unstyled mb-lg-0">
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Wedding Arches and Chuppahs' %}">Wedding Arches/ Chuppahs </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Pipe and Drape' %}">Pipe and Drape    </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Crowd Control' %}">Crowd control</a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Miscellaneous' %}">Miscellaneous</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- /Megamenu end-->
+            <li class="nav-item dropdown" ><a class="nav-link" id="docsDropdown" href="{% url 'policy' %}" aria-haspopup="true" aria-expanded="false">Rental Policy</a>
+              
+            </li>
+            <li class="nav-item dropdown"><a class="nav-link" id="docsDropdown" href="{% url 'contact' %}"  aria-haspopup="true" aria-expanded="false">Contact Us</a>
+              
+            </li>
+          </ul>
+          {% comment %} <form class="d-lg-flex ms-auto me-lg-5 me-xl-6 my-4 my-lg-0" action="#">
+            <div class="input-group input-group-underlined">
+              <input class="form-control form-control-underlined ps-3" type="text" placeholder="Search" aria-label="Search" aria-describedby="button-search">
+              <button class="btn btn-underlined" id="button-search" type="button"> 
+                <svg class="svg-icon navbar-icon">
+                  <use xlink:href="#search-1"> </use>
+                </svg>
+              </button>
+            </div>
+          </form>
+          <ul class="list-inline mb-0 d-none d-lg-block">
+            
+            <li class="list-inline-item position-relative me-3"><a class="text-dark text-primary-hover" href="#" data-bs-toggle="modal" data-bs-target="#sidebarCart">
+                <svg class="svg-icon navbar-icon">
+                  <use xlink:href="#retail-bag-1"> </use>
+                </svg>
+                <div class="navbar-icon-badge">5</div></a></li>
+            <li class="list-inline-item"><a class="text-dark text-primary-hover" href="#" data-bs-toggle="modal" data-bs-target="#sidebarRight">
+                <svg class="svg-icon navbar-icon">
+                  <use xlink:href="#menu-hamburger-1"> </use>
+                </svg></a></li>
+          </ul> {% endcomment %}
+        </div>
+      </nav>
+    </header>
+    <div class="container py-6">
+      <!-- Grid -->
+      <div class="products-grid ">
+        <!-- Hero Content-->
+        <div class="hero-content pb-5">
+          <h1>{{category.Name}}</h1>
+          <div class="row">   
+            <div class="col-xl-8"><p class="lead text-muted">{{category.conditional_text|default_if_none:''}}</p>                </div>
+          </div>
+        </div>
+        <!-- Breadcrumbs -->
+        <ol class="breadcrumb undefined">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Shop                                   </li>
+        </ol>
+        
+        <div class="row">
+          {% for product in category.product.all %}
+          <!-- product-->
+          <div class="col-xl-3 col-lg-4 col-6">
+            <div class="product" data-aos="zoom-in" data-aos-delay="0">
+              <div class="product-image mb-md-3">
+                  <div class="product-swap-image"><img class="img-fluid product-swap-image-front" src="{{product.image.url}}"  style="" alt="product"/></div></a>
+                <div class="product-hover-overlay"><a class="text-dark text-sm" href="#">
+                    <svg class="svg-icon text-primary-hover svg-icon-heavy d-sm-none">
+                      
+                    
+                  <div><a class="text-dark text-primary-hover me-2" href="#">
+                      <svg class="svg-icon svg-icon-heavy">
+                      
+                      </svg></a><a class="text-dark text-primary-hover text-decoration-none" href="#" data-bs-toggle="modal" data-bs-target="#quickView{{forloop.counter}}">
+                      <svg class="svg-icon svg-icon-heavy">
+                        <use xlink:href="#expand-1"> </use>
+                      </svg></a></div>
+                </div>
+              </div>
+              <div class="position-relative">
+                <h3 class="text-base mb-1"><a class="text-dark" >{{ product.price|default_if_none:'' }} {{product.Name}}</a></h3><span class="text-gray-500 text-sm"></span>
+                <div class="product-stars text-xs"><i class="fa fa-star text-primary"></i><i class="fa fa-star text-primary"></i><i class="fa fa-star text-primary"></i><i class="fa fa-star text-muted"></i><i class="fa fa-star text-muted"></i></div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          <!-- /product   -->
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- Quickview Modal    -->
+    {% for product in category.product.all %}
+    <div class="modal fade quickview" id="quickView{{forloop.counter}}" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <button class="btn-close btn-close-absolute btn-close-lg btn-close-rotate" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-body quickview-body">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="detail-carousel">
+                  <div class="swiper swiper-container quickview-slider" id="quickViewSlider">
+                    <!-- Additional required wrapper-->
+                    <div class="swiper-wrapper">
+                      <!-- Slides-->
+                      <div class="swiper-slide"><img class="img-fluid" src="{{product.image.url}}" alt="Modern Jacket 1"></div>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+              <div class="col-lg-6 p-lg-5">
+                <h2 class="mb-4 mt-4 mt-lg-1">{{product.Name}}</h2>
+                <div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-sm-between mb-4">
+                  <ul class="list-inline mb-2 mb-sm-0">
+                    <li class="list-inline-item h4 fw-light mb-0">{{product.price}}</li>
+                    
+                  </ul>
+                  
+                </div>
+                <p class="mb-4 text-muted">{% if product.description %}{{product.description|linebreaksbr|default:'' }}{% endif %}</p>
+                <pre class="mb-4 text-muted">{% if product.pricing_table %}{{product.pricing_table|linebreaksbr|default:''}} {% endif %}</pre>
+                <form id="buyForm_modal" action="#">
+                  
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    <div class="" style="text-align:center;padding-left:100px;padding-right:100px;" ><h3 style="text-align:center;">{{category.description_title|default_if_none:' '}}</h3></div>
+    <div class="" style="text-align:center;padding-left:100px;padding-right:100px; margin-top:50px" ><p class="lead text-muted" style="text-align:center;">{{category.description| linebreaksbr|default_if_none:''}}</p></div>
+    <div class="" style="text-align:center; padding-left:100px;padding-right:100px; margin-top:50px" ><pre class="lead text-muted" style="text-align:center;" >{{category.pricing_table| linebreaksbr|default_if_none:''}}</pre></div>
+    <!-- Footer-->
+    <footer>
+    
+      <!-- Main block - menus, subscribe form-->
+      <div class="py-6 text-muted"> 
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5 pe-lg-5 pe-xl-6 mb-5 mb-lg-0">
+              <h6 class="text-dark letter-spacing-1 mb-4">Contact us</h6>
+              <p class="text-sm mb-3">Send us and email or call us to make a Reservation</p>
+              <form action="#" id="newsletter-form">
+                <div class="input-group input-group-underlined mb-3">
+                  <a href="{% url 'contact' %}">
+                    <button class="btn btn-secondary" type="button"> 
+                      Reserve now
+                    </button>
+                  </a>
+                  
+                </div>
+              </form>
+            </div>
+            <div class="col-lg-7">      
+              <div class="row">                
+                <div class="col-lg-4"><a class="d-lg-none block-toggler my-3" data-bs-toggle="collapse" href="#footerMenu0" aria-expanded="false" aria-controls="footerMenu0">Products<span class="block-toggler-icon"></span></a>
+                  <!-- Footer collapsible menu-->
+                  <div class="expand-lg collapse" id="footerMenu0">
+                    <ul class="list-unstyled text-sm pt-2 pt-lg-0">
+                      <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Chairs' %}">Chairs</a></li>
+                      <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Tables' %}">Tables</a></li>
+                      <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Linen' %}">linen</a></li>
+                      <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Bars' %}">Bars</a></li
+                        <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Lounge Furniture' %}">Lounge furniture</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-4"><a class="d-lg-none block-toggler my-3" data-bs-toggle="collapse" href="#footerMenu1" aria-expanded="false" aria-controls="footerMenu1">Products<span class="block-toggler-icon"></span></a>
+                    <!-- Footer collapsible menu-->
+                    <div class="expand-lg collapse" id="footerMenu1">
+                      <ul class="list-unstyled text-sm pt-2 pt-lg-0">
+                        <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='China' %}">China</a></li>
+                        <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Silverware' %}">Silverware</a></li>
+                        <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Glassware' %}">Glassware</a></li>
+                        <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Catering' %}">Catering</a></li>
+                        <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Crowd Control' %}">Crowd control</a></li>
+                        <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Pipe and Drape' %}">Pipe and Drape</a></li>
+                      </ul>
+                  </div>
+                </div>
+                <div class="col-lg-4"><a class="d-lg-none block-toggler my-3" data-bs-toggle="collapse" href="#footerMenu2" aria-expanded="false" aria-controls="footerMenu2">Products<span class="block-toggler-icon"></span></a>
+                  <!-- Footer collapsible menu-->
+                  <div class="expand-lg collapse" id="footerMenu2">
+                    <ul class="list-unstyled text-sm pt-2 pt-lg-0">
+                      <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Tents' %}">Tents</a></li>
+                      <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Lighting and Music' %}">lighting/Music</a></li>
+                      <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Heatlamps and Umbrellas' %}">Heatlamps/Umbrellas</a></li>
+                      <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Flooring' %}">Flooring</a></li>
+                      <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Wedding Arches and Chuppahs' %}">Wedding Arches/Chuppahs</a></li>
+
+                    </ul>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Copyright section of the footer-->
+      <div class="py-4 fw-light text-muted">
+        <div class="container">
+          <div class="row align-items-center text-sm text-gray-500">
+            <div class="col-lg-4 text-center text-lg-start">
+              <p class="mb-lg-0">&copy; 2021, Enchanted Rentals.  All rights reserved.</p>
+            </div>
+            <div class="col-lg-8">
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- /Footer end-->
+    <!-- JavaScript files-->
+    <script>
+      // ------------------------------------------------------- //
+      //   Inject SVG Sprite - 
+      //   see more here 
+      //   https://css-tricks.com/ajaxing-svg-sprite/
+      // ------------------------------------------------------ //
+      function injectSvgSprite(path) {
+      
+          var ajax = new XMLHttpRequest();
+          ajax.open("GET", path, true);
+          ajax.send();
+          ajax.onload = function(e) {
+          var div = document.createElement("div");
+          div.className = 'd-none';
+          div.innerHTML = ajax.responseText;
+          document.body.insertBefore(div, document.body.childNodes[0]);
+          }
+      }
+      // this is set to Bootstrapious website as you cannot 
+      // inject local SVG sprite (using only 'icons/orion-svg-sprite.svg' path)
+      // while using file:// protocol
+      // pls don't forget to change to your domain :)
+      injectSvgSprite('https://demo.bootstrapious.com/varkala/1-1/icons/orion-svg-sprite.svg'); 
+      injectSvgSprite('https://demo.bootstrapious.com/varkala/1-1/icons/varkala-clothes.svg'); 
+      injectSvgSprite('https://demo.bootstrapious.com/varkala/1-1/img/shape/blob-sprite.svg'); 
+      
+    </script>
+    <!-- jQuery-->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <!-- Bootstrap Bundle -->
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <!-- Swiper Carousel                       -->
+    <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <!-- Bootstrap Select-->
+    <script src="{% static 'vendor/bootstrap-select/js/bootstrap-select.min.js' %}"></script>
+    <!-- AOS - AnimationOnScroll-->
+    <script src="{% static 'vendor/aos/aos.js' %}"></script>
+    <!-- Custom Scrollbar-->
+    <script src="{% static 'vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+    <script src="{% static 'js/custom-scrollbar-init.js' %}"></script>
+    <!-- Smooth scroll-->
+    <script src="{% static 'vendor/smooth-scroll/smooth-scroll.polyfills.min.js' %}"></script>
+    <!-- Object Fit Images - Fallback for browsers that don't support object-fit-->
+    <script src="{% static 'vendor/object-fit-images/ofi.min.js' %}"></script>
+    <!-- NoUI Slider (price slider)-->
+    <script>
+      var snapSlider = document.getElementById('slider-snap');
+      
+      
+      var snapValues = [
+      	document.getElementById('slider-snap-value-lower'),
+      	document.getElementById('slider-snap-value-upper')
+      ];
+      var inputValues = [
+      	document.getElementById('slider-snap-input-lower'),
+      	document.getElementById('slider-snap-input-upper')
+      ];
+         
+      
+    </script>
+    <!-- Some theme config-->
+    <script>
+      var options = {
+          navbarExpandPx: 992
+      }
+      
+    </script>
+    <!-- Main Theme files-->
+    <script src="{% static 'js/sliders-init.js' %}"></script>
+    <script src="{% static 'js/theme.js' %}"></script>
+  </body>
+</html>

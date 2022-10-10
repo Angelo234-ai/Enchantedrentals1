@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>EnchantedRentals</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Custom font-->
+    <!-- Swiper-->
+    <link rel="stylesheet" href="{% static 'vendor/swiper/swiper-bundle.min.css' %}">
+    <!-- AOS - AnimationOnScroll-->
+    <link rel="stylesheet" href="{% static 'vendor/aos/aos.css' %}">
+    <!-- Custom Scrollbar-->
+    <link rel="stylesheet" href="{% static 'vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css' %}">
+    <!-- Theme stylesheet-->
+    <link rel="stylesheet" href="{% static 'css/style.default.css' %}" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <!-- Favicon-->
+    <link rel="icon" href="{% static 'img/ER_logo.png' %}">
+    <!-- FontAwesome-->
+  </head>
+  <body>
+    <!-- navbar-->
+    <header class="header"> 
+      <!-- Top Bar-->
+      <div class="top-bar text-sm">
+        <div class="container-fluid px-lg-5 py-3">
+          <div class="row align-items-center">
+            <div class="col-md-4 d-none d-md-block">
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item me-2"><a class="text-reset text-primary-hover" href="#"><i class="fab fa-facebook-f"> </i></a></li>
+                <li class="list-inline-item me-4"><a class="text-reset text-primary-hover" href="#"><i class="fab fa-twitter"> </i></a></li>
+                <li class="list-inline-item me-2">
+                  <svg class="svg-icon me-2">
+                    <use xlink:href="#calls-1"> </use>
+                  </svg>310-444-9618
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-md-4 text-start text-md-center">
+              <p class="mb-0"> In light of recent events,  We have amended our hours of operation.
+
+                Our showroom will be open by appointment only.
+
+                The minimum order required for self pick up or delivery is $100.00 plus delivery
+              </p>
+            </div>
+            <div class="col-sm-6 col-md-4 d-none d-sm-flex justify-content-end">
+              <!-- Language Dropdown-->
+              <div class="dropdown border-right px-3"><a class="topbar-link" id="langsDropdown" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-haspopup="true" aria-expanded="false">English</a>
+              </div>
+              <!-- Currency Dropdown-->
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Top Bar End-->
+      <nav class="navbar navbar-expand-lg bg-transparent border-0 shadow-0 navbar-light px-lg-5 z-index-20 "><a class="navbar-brand" href="{% url 'index' %}">Enchanted Rentals</a>
+        
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <svg class="svg-icon navbar-icon">
+            <use xlink:href="#menu-hamburger-1"> </use>
+          </svg>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav mt-3 mt-lg-0">
+            
+            <!-- Megamenu-->
+            <li class="nav-item dropdown position-static"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Inventory</a>
+              <div class="dropdown-menu dropdown-menu-animated megamenu px-4 px-lg-5 py-lg-5">
+                <div class="row">
+                  <div class="col-lg-3 col-sm-6"><img class="img-fluid mb-3 d-none d-lg-block" src="{% static 'img/product/event-pic-2.jpg' %}"  alt=""/>
+                    <!-- Megamenu list-->
+                    <ul class="megamenu-list list-unstyled">
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Chairs' %}">Chairs   </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Tables' %}">Tables   </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Linen' %}">Linen</a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Lounge furniture' %}">Lounge furniture   </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Bars' %}">Bars </a></li>
+                    </ul>
+            
+                  </div>
+                  <div class="col-lg-3 col-sm-6"><img class="img-fluid mb-3 d-none d-lg-block" src="{% static 'img/product/event-utensils.jpg' %}" alt=""  style="height:210px;"/>
+                    <!-- Megamenu list-->
+                    <ul class="megamenu-list list-unstyled">
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='China' %}">China   </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Silverware' %}">Silverware  </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Glassware' %}">Glassware   </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Catering' %}">Catering   </a></li>
+                    </ul>
+                    <!-- Megamenu list-->
+                  
+                  </div>
+                  <div class="col-lg-3 col-sm-6"><img class="img-fluid mb-3 d-none d-lg-block" src="{% static 'img/product/tents.jpg' %}" alt="" style="height:210px;"/>
+                    <!-- Megamenu list-->
+                    <ul class="megamenu-list list-unstyled">
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Tents' %}">Tents   </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Lighting and Music' %}">Lighting/music   </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Heatlamps and Umbrellas' %}">Heatlamps/Umbrellas   </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Flooring' %}">Flooring   </a></li>
+                    </ul>
+                    
+                  </div>
+                  <div class="col-lg-3 col-sm-6"><img class="img-fluid mb-3 d-none d-lg-block" src="{% static 'img/product/arches.jpg' %}" alt="" style="height:210px;"/>
+                    <!-- Megamenu list-->
+                    <ul class="megamenu-list list-unstyled mb-lg-0">
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Wedding Arches and Chuppahs' %}">Wedding Arches/ Chuppahs </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Pip and Drape' %}">Pipe and Drape    </a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Crowd Control' %}">Crowd control</a></li>
+                      <li class="megamenu-list-item"><a class="megamenu-list-link" href="{% url 'products' category='Miscellaneous' %}">Miscellaneous</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- /Megamenu end-->
+            <li class="nav-item dropdown" ><a class="nav-link" id="docsDropdown" href="{% url 'policy' %}" aria-haspopup="true" aria-expanded="false">Rental Policy</a>
+              
+            </li>
+            <li class="nav-item dropdown"><a class="nav-link" id="docsDropdown" href="{% url 'contact' %}"  aria-haspopup="true" aria-expanded="false">Contact Us</a>
+              
+            </li>
+          </ul>
+          {% comment %} <form class="d-lg-flex ms-auto me-lg-5 me-xl-6 my-4 my-lg-0" action="#">
+            <div class="input-group input-group-underlined">
+              <input class="form-control form-control-underlined ps-3" type="text" placeholder="Search" aria-label="Search" aria-describedby="button-search">
+              <button class="btn btn-underlined" id="button-search" type="button"> 
+                <svg class="svg-icon navbar-icon">
+                  <use xlink:href="#search-1"> </use>
+                </svg>
+              </button>
+            </div>
+          </form>
+          <ul class="list-inline mb-0 d-none d-lg-block">
+            
+            <li class="list-inline-item position-relative me-3"><a class="text-dark text-primary-hover" href="#" data-bs-toggle="modal" data-bs-target="#sidebarCart">
+                <svg class="svg-icon navbar-icon">
+                  <use xlink:href="#retail-bag-1"> </use>
+                </svg>
+                <div class="navbar-icon-badge">5</div></a></li>
+            <li class="list-inline-item"><a class="text-dark text-primary-hover" href="#" data-bs-toggle="modal" data-bs-target="#sidebarRight">
+                <svg class="svg-icon navbar-icon">
+                  <use xlink:href="#menu-hamburger-1"> </use>
+                </svg></a></li>
+          </ul> {% endcomment %}
+        </div>
+      </nav>
+    </header>
+    <!-- Hero Section-->
+    <section class="hero py-6">
+      <div class="container">
+        <!-- Breadcrumbs -->
+        <ol class="breadcrumb ps-0 ">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Rental Policy        </li>
+        </ol>
+        <!-- Hero Content-->
+        <div class="hero-content">
+          <h1 class="hero-heading mb-3">Rental Policy</h1>
+          <div><p class="text-muted mb-0"></p></div>
+        </div>
+      </div>
+    </section>
+    <!-- customer login-->
+    <section class="pb-6">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 text-content">
+            <p>Delivery and pick-up rates are quoted as a round trip fee. Delivery and pick-up rates are based on the time and location of your event. There is a minimum amount that must be met(Depending on your location) before delivery charges are applied.﻿</p>
+            <p>"Deliveries are done in a 6 hrs window timeframe ". Timed delivery is also available for an additional fee, arrangements for this must be made in advance. Our normal delivery and pick-up times are Monday through Saturday, any time between 7:00 AM-5:00 PM.</p>
+            <p>Please have the designated space ready as our crew will not move any personal items.</p>
+            <h5>SIGNATURE IS REQUIRED AT TIME OF DELIVERY; NO EXCEPTIONS</h5>
+            <hr>
+            <h2>Waiting Time</h2>
+            <p>We recommend that the client is available onsite upon delivery to verify and sign for equipment; If we are forced to wait more than 30 minutes, a labor charge of $50.00 will be assessed per hour/per truck to your bill</p>
+            <p>If the client is not present or reachable at the time of arrival and we are forced to come back at a later time an additional delivery fee will be applied.</p>
+            
+            <h2>Inside Delivery</h2>
+            <p>Standard delivery includes product drop-off at the central location on site AT STREET LEVEL (maximum of  75 Feet walking distance).</p>
+
+            <p>If the client wants Enchanted Rental's staff to take products</p>
+            <p>inside facilities that become difficult, such as on the 2nd floor, basement, elevator, or stairs there may be an inside delivery charge, This fee will be determined during your delivery. </p>
+            <p>"Delivery fee is NOT or does NOT include SET UP".</p>
+            
+            <hr>
+            <h2>Set up & Tear Down</h2>
+            <p>Set up or break down service is available at a reasonable cost if arranged in advance. The charge to set up our items is $.75 per table and $.50 per chair. The charge to tear down your items is $1.00 per table and $.75 per chair(minimum $20.00 fee)</p>
+            <p>No charge for pop-up canopies, dance floors, or stages.</p>
+            <p>If product delivery or pick up requires our crew to pick up after 7 pm, there will be an after-hour fee assessed.﻿</p>
+            
+            <hr>
+            <h2>China</h2>
+            <p>All China, silver, glassware, hollowware, and bowls should be rinsed food-free and repackaged in the same containers as delivered. A 35% fee will be assessed if returned dirty.</p>
+            <p>Items will be delivered folded and stacked and must be folded and stacked by the customer in the same manner when awaiting pick up in order to avoid additional charges.</p>
+            <hr>
+            <h2>Linens & Table Skirting</h2>
+            <p>MUST BE DRY and free of food and debris. Linens or skirts that have been torn or permanently damaged by stains, burns or candle wax, markers, ink, or any type of glue and glitter will be billed to Renter at full replacement cost</p>
+            <hr>
+            <h2>Rental Period</h2>
+            <p>All rates quoted are based on a 24 hour rental period per item; however, we allow extra time for the customer to pick up/drop off at our location. We prefer to deliver the day before your event and pick up the day after.</p>
+            <hr>
+            <h2>Self Pick-Up Requirements </h2>
+            <p>A minimum security deposit, a copy of a credit card, and an ID are required for self-pick-ups. A full deposit will be refunded when rented equipment is returned; replacement fees will be applied for missing or broken items.</p>
+            <hr>
+            <h2>Loss or Damage</h2>
+            <p>The customer will be charged for breakage or loss at the replacement cost of the item, Responsibility for equipment remains with the customer from delivery until return. Please be sure equipment is secured when not in use and protected from the weather.</p>
+            <hr>
+            <h2>Cancellation Policy</h2>
+            <p>Cancellation 24 hours prior event- 100% charge of the full rental reservation</p>
+            <p>Cancellations up to 48 hrs before your delivery day at no charge.</p>
+            <p>100% charge for special order items.</p>
+            <p>Enchanted Rentals reserves the right to charge full rental fees.</p>
+            <hr>
+            <h2>Refunds</h2>
+            <p>All rented fees are final, If for any reason the equipment was not used; Enchanted rentals does not authorize any refunds once the equipment has been delivered or left our store; current time and fees are running unless the equipment is not working properly.</p>
+            <p>We test and make sure equipment is working properly before leaving the warehouse; YOU must notify us the same instance you find out; notifying the delivery team upon pickup will result in a full price rental fee. </p>
+            
+            <hr>
+            <h2>Payment Policy</h2>
+            <p>It's critical that the contact person has payment ready for the driver at the time of delivery. Drivers are required to collect final payment at the time of delivery unless you've made prior arrangements to charge a credit card the previous business day.</p>
+            <p>NO delivery of equipment will take place until payment is made in full. Failure to make payment could result in delays and/or event cancellation fee</p>
+            <p></p>
+            <hr>
+            <h2>Event Confirmation</h2>
+            <p>We generally contact you within 1-2 days of your event to confirm final payment, a method of payment, and coordinate delivery times, etc. All reservations require confirmation and coordination of delivery.</p>
+            <p>If you are unavailable at the time of the call, we will leave a message. If we cannot reach you and/or you do not call back before the day of your event, we cannot guarantee delivery.</p>
+
+            <hr>
+            <h2>Equipment Availability</h2>
+            <p>Enchanted Rentals processes all reservation requests on a first come first serve basis. Receipt of a quote does NOT guarantee equipment availability.</p>
+            <p>Online quotes will need to be confirmed before the items are reserved.  We require a credit card on file and a signed contract to hold and book your reservation request.</p>
+            {% comment %} <p>All equipment and items may vary by color, shape, brand and material.</p> {% endcomment %}
+            <p>All equipment is rented as is with no guarantee</p>
+
+
+            <p>Customer agrees to assume the risk of, and hold Enchanted Rentals harmless for
+              any property damage or personal injuries, including damage or injuries attributable to the negligence of the
+              Enchanted Rentals and or his employees.</p>
+
+            
+              <p>This agreement is not a contract of sale. Title to the goods is and shall remain in Enchanted Rentals.
+
+              </p>
+
+              <p>Customer grants to Enchanted Rentals the right and privilege to enter upon the premises. Customer agrees to assume the risk of, and hold Enchanted Rentals harmless for, property damage and personal
+                injuries caused by the employees entering and leaving equipment in agreed designated area.
+              </p>
+
+              <p>Customer agrees to pay full balance amount and service fees charges, even if customer refuses to sign at time of delivery. 
+                No refunds will be given and customer will be charged any additional fees Enchanted Rentals desires.
+              </p>
+              <p>Customer agrees that all equipment and items rented, have no guarantee in brand, condition, style, color, or likeness.
+              </p>
+
+              <p>Customer is responsible for the loading and unloading goods. If Enchanted Rental’s employees assist in
+                loading or unloading the goods, Customer agrees to assume the risk of, and hold Enchanted Rentals harmless for
+                any property damage or personal injuries, including damage or injuries attributable to the negligence of the
+                Enchanted Rentals and or his employees.
+              </p>
+
+              
+              <p>Delivery and pick up will be at Enchanted Rental’s convenience. (b) Delivery and pick up will be to ground
+                level only – additional charges will apply for delivery or pick up if up or down stairs. (c) Delivery must be made
+                to and equipment kept in a sheltered location protected from the elements. (d) Chairs and tables will be
+                delivered stacked and/or bagged. Customer must ensure they are similarly stacked and bagged ready for pick
+                up. There is an additional charge for set up and tear down. Dinnerware must be returned clean
+              </p>
+              {% comment %} <p>Enchanted rentals does not guarantee equipment condition, shape </p> {% endcomment %}
+              <p>Special orders and same-day cancellations are subject to a 100% cancellation charge.</p>
+
+              <p>Customer agrees to indemnify and reimburse Enchanted Rentals for all liabilities to Enchanted Rentals, his
+                agent or third parties, arising out of the use of the goods or a breach of this contract by Customer, including
+                those arising from Enchanted Rental’s negligence
+              </p>
+
+            <h1>WE HAVE THE RIGHT TO REFUSE SERVICE TO ANYONE.</h1>
+            
+          
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Footer-->
+    <footer>
+    
+      <!-- Main block - menus, subscribe form-->
+      <div class="py-6 text-muted"> 
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5 pe-lg-5 pe-xl-6 mb-5 mb-lg-0">
+              <h6 class="text-dark letter-spacing-1 mb-4">Contact us</h6>
+              <p class="text-sm mb-3">Send us and email or call us to make a Reservation</p>
+                <div class="input-group input-group-underlined mb-3">
+                  <a href="{% url 'contact' %}">
+                  <button class="btn btn-secondary" type="button"> 
+                    Reserve now
+                  </button>
+                </a>
+                </div>
+            </div>
+            <div class="col-lg-7">      
+              <div class="row">                
+                <div class="col-lg-4"><a class="d-lg-none block-toggler my-3" data-bs-toggle="collapse" href="#footerMenu0" aria-expanded="false" aria-controls="footerMenu0">Products<span class="block-toggler-icon"></span></a>
+                  <!-- Footer collapsible menu-->
+                  <div class="expand-lg collapse" id="footerMenu0">
+                    <ul class="list-unstyled text-sm pt-2 pt-lg-0">
+                      <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Chairs' %}">Chairs</a></li>
+                      <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Tables' %}">Tables</a></li>
+                      <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Linen' %}">linen</a></li>
+                      <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Bars' %}">Bars</a></li
+                        <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Lounge Furniture' %}">Lounge furniture</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-4"><a class="d-lg-none block-toggler my-3" data-bs-toggle="collapse" href="#footerMenu1" aria-expanded="false" aria-controls="footerMenu1">Products<span class="block-toggler-icon"></span></a>
+                    <!-- Footer collapsible menu-->
+                    <div class="expand-lg collapse" id="footerMenu1">
+                      <ul class="list-unstyled text-sm pt-2 pt-lg-0">
+                        <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='China' %}">China</a></li>
+                        <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Silverware' %}">Silverware</a></li>
+                        <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Glassware' %}">Glassware</a></li>
+                        <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Catering' %}">Catering</a></li>
+                        <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Crowd Control' %}">Crowd control</a></li>
+                        <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Pipe and Drape' %}">Pipe and Drape</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-lg-4"><a class="d-lg-none block-toggler my-3" data-bs-toggle="collapse" href="#footerMenu2" aria-expanded="false" aria-controls="footerMenu2">Products<span class="block-toggler-icon"></span></a>
+                  <!-- Footer collapsible menu-->
+                  <div class="expand-lg collapse" id="footerMenu2">
+                    <ul class="list-unstyled text-sm pt-2 pt-lg-0">
+                      <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Tents' %}">Tents</a></li>
+                      <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Lighting and Music' %}">lighting/Music</a></li>
+                      <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Heatlamps and Umbrellas' %}">Heatlamps/Umbrellas</a></li>
+                      <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Flooring' %}">Flooring</a></li>
+                      <li class="mb-2"> <a class="text-muted text-dark-hover link-animated" href="{% url 'products' category='Wedding Arches and Chuppahs' %}">Wedding Arches/Chuppahs</a></li>
+
+                    </ul>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Copyright section of the footer-->
+      <div class="py-4 fw-light text-muted">
+        <div class="container">
+          <div class="row align-items-center text-sm text-gray-500">
+            <div class="col-lg-4 text-center text-lg-start">
+              <p class="mb-lg-0">&copy; 2021, Enchanted Rentals.  All rights reserved.</p>
+            </div>
+            <div class="col-lg-8">
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+ 
+    <!-- /Footer end-->
+    <!-- JavaScript files-->
+    <script>
+      // ------------------------------------------------------- //
+      //   Inject SVG Sprite - 
+      //   see more here 
+      //   https://css-tricks.com/ajaxing-svg-sprite/
+      // ------------------------------------------------------ //
+      function injectSvgSprite(path) {
+      
+          var ajax = new XMLHttpRequest();
+          ajax.open("GET", path, true);
+          ajax.send();
+          ajax.onload = function(e) {
+          var div = document.createElement("div");
+          div.className = 'd-none';
+          div.innerHTML = ajax.responseText;
+          document.body.insertBefore(div, document.body.childNodes[0]);
+          }
+      }
+      // this is set to Bootstrapious website as you cannot 
+      // inject local SVG sprite (using only 'icons/orion-svg-sprite.svg' path)
+      // while using file:// protocol
+      // pls don't forget to change to your domain :)
+      injectSvgSprite('https://demo.bootstrapious.com/varkala/1-1/icons/orion-svg-sprite.svg'); 
+      injectSvgSprite('https://demo.bootstrapious.com/varkala/1-1/icons/varkala-clothes.svg'); 
+      injectSvgSprite('https://demo.bootstrapious.com/varkala/1-1/img/shape/blob-sprite.svg'); 
+      
+    </script>
+    <!-- jQuery-->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <!-- Bootstrap Bundle -->
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <!-- Swiper Carousel                       -->
+    <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <!-- Bootstrap Select-->
+    <script src="{% static 'vendor/bootstrap-select/js/bootstrap-select.min.js' %}"></script>
+    <!-- AOS - AnimationOnScroll-->
+    <script src="{% static 'vendor/aos/aos.js' %}"></script>
+    <!-- Custom Scrollbar-->
+    <script src="{% static 'vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+    <script src="{% static 'js/custom-scrollbar-init.js' %}"></script>
+    <!-- Smooth scroll-->
+    <script src="{% static 'vendor/smooth-scroll/smooth-scroll.polyfills.min.js' %}"></script>
+    <!-- Object Fit Images - Fallback for browsers that don't support object-fit-->
+    <script src="{% static 'vendor/object-fit-images/ofi.min.js' %}"></script>
+    <!-- Some theme config-->
+    <script>
+      var options = {
+          navbarExpandPx: 992
+      }
+      
+    </script>
+    <!-- Main Theme files-->
+    <script src="{% static 'js/sliders-init.js' %}"></script>
+    <script src="{% static 'js/theme.js' %}"></script>
+  </body>
+</html>
